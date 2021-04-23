@@ -507,7 +507,9 @@ body {
 
 /* portfolio */
 .portfolio__button--link {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 6px 22px;
   border-radius: 4px;
   min-width: 73px;
@@ -643,8 +645,7 @@ body {
 }
 
 .portfolio__subtitle {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 0 4px;
   color: #212121;
   font-family: Roboto, sans-serif;
   font-weight: 700;
