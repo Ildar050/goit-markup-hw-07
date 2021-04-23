@@ -1,0 +1,5 @@
+body {
+  color: $primary-text-color;
+  background-color: $background-color;
+  @include font($normal, $primary-text-size, 1.7);
+}

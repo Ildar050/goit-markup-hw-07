@@ -1,0 +1,21 @@
+/* logo */
+.contacts__link:hover,
+.contacts__link:focus {
+  color: $accent-color;
+}
+
+.logo {
+  color: $accent-color;
+  text-decoration: none;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+
+.logo__header {
+  color: $title-text-color;
+}
+.logo__footer {
+  color: $white-color;
+}
