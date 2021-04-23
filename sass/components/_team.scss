@@ -1,6 +1,8 @@
+.container {
+  @extend %container;
+}
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @extend %section;
   background-color: $background-grey;
 }
 
@@ -9,19 +11,14 @@
   margin-bottom: 50px;
 
   color: $title-text-color;
+  @include font($bold, $title-text-size, 1.16);
 
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
   text-align: center;
 }
 
 .team__list {
-  display: flex;
-
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @include flexbox();
+  @extend %list;
 }
 
 .team__item {
@@ -50,15 +47,12 @@
   margin-bottom: 0;
 
   color: $title-text-color;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
+  @include font($medium, $secondary-text-size, 1.19);
 }
 .team__specialty {
   margin-top: 10px;
   margin-bottom: 0px;
 
-  font-size: 16px;
-  line-height: 1.19;
+  @include font($normal, $secondary-text-size, 1.19);
   text-align: center;
 }

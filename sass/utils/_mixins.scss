@@ -11,3 +11,9 @@
   line-height: $line-height;
   letter-spacing: $letter-spacing;
 }
+
+@mixin flexbox($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}

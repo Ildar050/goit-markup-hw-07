@@ -1,20 +1,15 @@
 .socials {
-  display: flex;
-  justify-content: center;
+  @include flexbox();
   margin-top: 16px;
 
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @extend %list;
 }
 .social__item:not(:last-child) {
   margin-right: 10px;
 }
 
 .socials__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox();
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -25,7 +20,7 @@
 }
 
 .socials__icon {
-  fill: currentColor;
+  @extend %fill;
 }
 
 .socials__link:hover,

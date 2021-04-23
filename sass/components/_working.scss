@@ -1,7 +1,5 @@
 .working__list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @extend %list;
 }
 
 .working__title {
@@ -9,20 +7,19 @@
   margin-bottom: 50px;
 
   color: $title-text-color;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
+  @include font($bold, 36px, 1.16);
   text-align: center;
+}
+.container {
+  @extend %container;
 }
 
 .working {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @extend %section;
 }
 
 .working__list {
-  display: flex;
+  @include flexbox();
 }
 
 .working__item + .working__item {
@@ -35,9 +32,7 @@
 
 .working__subtitle {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox();
   left: 0;
   bottom: 0;
 
@@ -45,9 +40,8 @@
   height: 70px;
   margin: 0;
   padding: 0;
+  @include font($bold, $primary-text-size, 1.14);
 
-  font-weight: 700;
-  line-height: 1.14;
   text-align: center;
   text-transform: uppercase;
 

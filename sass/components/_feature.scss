@@ -1,6 +1,9 @@
 .features {
-  display: flex;
+  @include flexbox();
+  @extend %container;
+  @extend %list;
 }
+
 .feature {
   padding-top: 94px;
 }
@@ -15,9 +18,7 @@
 }
 
 .feature__icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox();
   border-radius: 4px;
   height: 120px;
   background-color: $alternate-color;
@@ -33,10 +34,8 @@
   margin-bottom: 10px;
 
   color: $title-text-color;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
+  @include font($bold, $primary-text-size, 1.14);
+
   text-transform: uppercase;
 }
 

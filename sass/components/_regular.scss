@@ -1,6 +1,8 @@
+.container {
+  @extend %container;
+}
 .regular--clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @extend %section;
 }
 
 .regular__clients-title {
@@ -8,18 +10,14 @@
   margin-bottom: 50px;
 
   color: $title-text-color;
+  @include font($bold, $title-text-size, 1.16);
 
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
   text-align: center;
 }
 
 .regular-clients__list {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @include flexbox();
+  @extend %list;
 }
 
 .regular-clients__item {
@@ -30,7 +28,7 @@
   margin-left: 30px;
 }
 .regular-clients__link {
-  display: flex;
+  @include flexbox();
   width: 170px;
   height: 90px;
   padding: 0;
@@ -39,16 +37,13 @@
   border-color: $icon-color;
   border-radius: 4px;
 
-  justify-content: center;
-  align-items: center;
-
   color: $icon-color;
 
   transition: color $cubic, border-color $cubic;
 }
 
 .regular-clients__icon {
-  fill: currentColor;
+  @extend %fill;
 }
 
 .regular-clients__link:hover,

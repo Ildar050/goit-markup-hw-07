@@ -3,27 +3,23 @@
 }
 
 .address__list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @extend %list;
 }
 
 .address__link {
-  display: flex;
-
+  display: inline-block;
+  @include font($normal, $primary-text-size, 1.71);
   font-style: normal;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
+
   color: $transparent-white;
-  text-decoration: none;
+  @extend %link;
 
   transition: color $cubic;
-}
 
-.address__link:hover,
-.address__link:focus {
-  color: $accent-color;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 .address__link:last-child(2n) {
@@ -43,8 +39,8 @@
 
   font-style: normal;
   color: $white-color;
-  font-size: 14px;
-  line-height: 1.71;
+
+  @include font($normal, $primary-text-size, 1.71);
 }
 
 .address__content {
@@ -52,17 +48,14 @@
 }
 
 .page-footer__content {
-  display: flex;
+  @include flexbox(baseline);
   padding-top: 60px;
   padding-bottom: 60px;
-  align-items: baseline;
 }
 
 // Join
 .join__title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  @include font($bold, $primary-text-size, 1.14);
   text-transform: uppercase;
   margin-bottom: 20px;
   margin-top: 0;
@@ -70,10 +63,8 @@
 }
 
 .join__list {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  @include flexbox();
+  @extend %list;
 }
 
 .join {
@@ -85,9 +76,7 @@
 }
 
 .join__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexbox();
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -101,7 +90,7 @@
 .join__icon {
   width: 20px;
   height: 20px;
-  fill: currentColor;
+  @extend %fill;
 }
 
 .join__link:hover,
@@ -112,34 +101,28 @@
   margin-left: 93px;
 }
 .subscribe__title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  @include font($bold, $primary-text-size, 1.14);
   text-transform: uppercase;
   margin-bottom: 20px;
   margin-top: 0;
   color: $white-color;
 }
 .subscribe__form {
-  display: flex;
-  align-items: center;
+  @include flexbox();
 }
 
 .subscribe__button {
-  display: flex;
-  align-items: center;
+  @include flexbox();
   border-radius: 4px;
   border: 1px solid transparent;
   padding: 10px 32px;
   min-width: 200px;
   margin-left: 12px;
 
-  color: var(--white-color);
-  background-color: var(--accent-color);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
+  color: $white-color;
+  background-color: $accent-color;
+  @include font($bold, $secondary-text-size, 1.87, 0.06em);
+
   cursor: pointer;
 }
 
@@ -151,7 +134,7 @@
 }
 
 .subscribe__input {
-  display: flex;
+  @include flexbox();
   width: 360px;
   height: 50px;
   margin-right: 10px;
@@ -159,8 +142,6 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-
-  align-items: center;
 
   background-color: transparent;
   color: $white-color;

@@ -1,10 +1,7 @@
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
+  @extend %container;
 }
+
 /* page header */
 
 .page-header {
@@ -13,17 +10,16 @@
 }
 
 .page-header__container {
-  display: flex;
-  align-items: center;
+  @include flexbox();
 }
 .page-header__navigation {
-  display: flex;
-  align-items: center;
+  @include flexbox();
 }
 
 /* site nav */
 .site-nav {
-  display: flex;
+  @extend %list;
+  @include flexbox();
   margin-left: 93px;
 }
 
@@ -34,19 +30,19 @@
 .site-nav__link--current {
   color: $accent-color;
   position: relative;
-}
 
-.site-nav__link--current::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: $accent-color;
-  border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $accent-color;
+    border-radius: 2px;
+  }
 }
 
 .site-nav__link {
@@ -55,23 +51,22 @@
   padding-bottom: 32px;
 
   color: $title-text-color;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  text-decoration: none;
+
+  @include font($medium, $primary-text-size, 1.14, 0.02em);
+  @extend %link;
 
   transition: color $cubic;
-}
 
-.site-nav__link:hover,
-.site-nav__link:focus {
-  color: $accent-color;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 //contacts
 .contacts {
-  display: flex;
+  @extend %list;
+  @include flexbox();
   margin-left: auto;
 }
 
@@ -84,15 +79,11 @@
 }
 
 .contacts__link {
-  display: flex;
-  align-items: center;
-
+  @include flexbox();
   color: $primary-text-color;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  text-decoration: none;
+
+  @include font($medium, $primary-text-size, 1.14, 0.02em);
+  @extend %link;
 
   transition: $cubic;
 }
@@ -102,7 +93,7 @@
   background-size: contain;
   background-position: center;
 
-  fill: currentColor;
+  @extend %fill;
 }
 
 .contacts__link:hover,
