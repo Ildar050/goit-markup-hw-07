@@ -20,10 +20,10 @@
   &:focus {
     color: $accent-color;
   }
-}
-
-.address__link:last-child(2n) {
-  padding-bottom: 60px;
+  
+  &:last-child(2n) {
+    padding-bottom: 60px;
+  }
 }
 
 .address__list {
@@ -85,6 +85,11 @@
   color: $white-color;
 
   transition: color $cubic;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
 }
 
 .join__icon {
@@ -93,10 +98,6 @@
   @extend %fill;
 }
 
-.join__link:hover,
-.join__link:focus {
-  background-color: $accent-color;
-}
 .subscribe {
   margin-left: 93px;
 }

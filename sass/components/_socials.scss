@@ -17,16 +17,15 @@
   color: $icon-color;
 
   transition: color $cubic, background-color $cubic;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-color;
+  }
 }
 
 .socials__icon {
   @extend %fill;
-}
-
-.socials__link:hover,
-.socials__link:focus {
-  background-color: $accent-color;
-  color: $white-color;
 }
 
 .section {

@@ -40,14 +40,14 @@
   color: $icon-color;
 
   transition: color $cubic, border-color $cubic;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border-color: $accent-color;
+  }
 }
 
 .regular-clients__icon {
   @extend %fill;
-}
-
-.regular-clients__link:hover,
-.regular-clients__link:focus {
-  color: $accent-color;
-  border-color: $accent-color;
 }

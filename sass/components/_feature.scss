@@ -2,6 +2,8 @@
   @include flexbox();
   @extend %container;
   @extend %list;
+  margin: 0;
+  padding: 0;
 }
 
 .feature {

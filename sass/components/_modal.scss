@@ -101,23 +101,22 @@
   display: inline-block;
   height: 24px;
   text-align: center;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 46px;
 
-.checkbox__lable::before {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 46px;
+    width: 13px;
+    height: 13px;
+    border: 2px solid $title-text-color;
+    border-radius: 4px;
 
-  width: 13px;
-  height: 13px;
-  border: 2px solid $title-text-color;
-  border-radius: 4px;
+    background-color: $white-color;
 
-  background-color: $white-color;
-
-  transition: border $cubic, background-color $cubic;
+    transition: border $cubic, background-color $cubic;
+  }
 }
 
 .checkbox__icon:checked + .checkbox__lable::before {
@@ -137,12 +136,11 @@
   border-radius: 4px;
 
   transition: border $cubic, outline $cubic;
-}
-
-.form__input:focus {
-  border: 1px solid $accent-color;
-  border-radius: 4px;
-  outline: inherit;
+  &:focus {
+    border: 1px solid $accent-color;
+    border-radius: 4px;
+    outline: inherit;
+  }
 }
 
 .form__icon {
