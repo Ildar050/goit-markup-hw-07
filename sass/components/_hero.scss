@@ -24,8 +24,8 @@
 
   color: $white-color;
   @include font($black, 44px, 1.36, 0.06em);
+}
 
- 
 .hero__button {
   display: inline-block;
   border-radius: 4px;
